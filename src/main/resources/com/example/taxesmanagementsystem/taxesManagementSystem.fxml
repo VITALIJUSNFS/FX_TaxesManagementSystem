@@ -1,21 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taxesmanagementsystem.HelloController">
    <children>
-      <AnchorPane prefHeight="149.0" prefWidth="1100.0" style="-fx-background-color: grey;">
+      <ImageView fitHeight="485.0" fitWidth="280.0" layoutX="791.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/future.JPG" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="155.0" prefWidth="1100.0" style="-fx-background-color: grey;">
          <children>
-            <Text layoutX="286.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TAXES MANAGEMENT SYSTEM">
+            <Text layoutX="173.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TAXES MANAGEMENT SYSTEM">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <Button fx:id="createCompany" layoutX="918.0" layoutY="175.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Button" />
+      <TabPane layoutX="32.0" layoutY="181.0" prefHeight="564.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Company">
+               <content>
+                  <AnchorPane prefHeight="529.0" prefWidth="790.0">
+                     <children>
+                        <AnchorPane layoutX="24.0" layoutY="12.0" prefHeight="506.0" prefWidth="190.0" style="-fx-background-color: grey; -fx-border-color: black;">
+                           <children>
+                              <Label layoutX="18.0" layoutY="23.0" prefHeight="20.0" prefWidth="142.0" text="Create new company" textFill="#e8e4e4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtNameCompany" layoutX="14.0" layoutY="52.0" promptText="Company name" />
+                              <TextField fx:id="txtCountry" layoutX="14.0" layoutY="84.0" promptText="Country" />
+                              <Button fx:id="btnAddCompany" layoutX="14.0" layoutY="171.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Add" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDeleteCompany" layoutX="99.0" layoutY="171.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnFindCompany" layoutX="14.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Find" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifyCompany" layoutX="99.0" layoutY="208.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Modify" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAllCompanies" layoutX="18.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="ALL" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtBudget" layoutX="14.0" layoutY="115.0" promptText="Budget" />
+                              <ImageView fitHeight="150.0" fitWidth="152.0" layoutX="14.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/comP11.JPG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <TextArea fx:id="txtOutput" layoutX="231.0" layoutY="14.0" prefHeight="493.0" prefWidth="542.0" style="-fx-border-color: black;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Vehicles">
+               <content>
+                  <AnchorPane prefHeight="529.0" prefWidth="790.0">
+                     <children>
+                        <AnchorPane layoutX="24.0" layoutY="12.0" prefHeight="506.0" prefWidth="190.0" style="-fx-background-color: grey; -fx-border-color: black;">
+                           <children>
+                              <Label layoutX="18.0" layoutY="23.0" prefHeight="20.0" prefWidth="142.0" text="Create new vehicle" textFill="#e8e4e4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtNameCompany1" layoutX="14.0" layoutY="52.0" promptText="Brand" />
+                              <TextField fx:id="txtCountry1" layoutX="14.0" layoutY="84.0" promptText="Registration Number" />
+                              <Button fx:id="btnAddCompany1" layoutX="14.0" layoutY="366.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Add" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDeleteCompany1" layoutX="99.0" layoutY="366.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnFindCompany1" layoutX="14.0" layoutY="403.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Find" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifyCompany1" layoutX="99.0" layoutY="403.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Assign" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAllCompanies1" layoutX="18.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="ALL" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtBudget2" layoutX="14.0" layoutY="115.0" promptText="Type" />
+                              <TextField fx:id="txtBudget1" layoutX="15.0" layoutY="149.0" promptText="Belongs to company" />
+                              <TextField fx:id="txtBudget11" layoutX="15.0" layoutY="183.0" promptText="Belongs to workshop" />
+                              <ImageView fitHeight="143.0" fitWidth="144.0" layoutX="18.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/trucks.JPG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <TextArea fx:id="txtOutput1" layoutX="231.0" layoutY="14.0" prefHeight="493.0" prefWidth="542.0" style="-fx-border-color: black;" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Workshop">
+               <content>
+                  <AnchorPane prefHeight="529.0" prefWidth="790.0">
+                     <children>
+                        <AnchorPane layoutX="24.0" layoutY="12.0" prefHeight="506.0" prefWidth="190.0" style="-fx-background-color: grey; -fx-border-color: black;">
+                           <children>
+                              <Label layoutX="18.0" layoutY="23.0" prefHeight="20.0" prefWidth="142.0" text="Create  Workshop" textFill="#e8e4e4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtNameCompany2" layoutX="14.0" layoutY="52.0" promptText="Name" />
+                              <TextField fx:id="txtCountry2" layoutX="14.0" layoutY="84.0" promptText="Adress" />
+                              <Button fx:id="btnAddCompany2" layoutX="15.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Add" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDeleteCompany2" layoutX="100.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnFindCompany2" layoutX="15.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Find" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifyCompany2" layoutX="100.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Assign" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAllCompanies2" layoutX="18.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="ALL" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtBudget3" layoutX="14.0" layoutY="115.0" promptText="Type" text="Assign Vehicle" />
+                              <ImageView fitHeight="137.0" fitWidth="149.0" layoutX="15.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/workshop.JPG" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="115.0" fitWidth="152.0" layoutX="14.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/repair.JPG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <TextArea fx:id="txtOutput2" layoutX="231.0" layoutY="14.0" prefHeight="493.0" prefWidth="542.0" style="-fx-border-color: black;" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Drivers">
+               <content>
+                  <AnchorPane prefHeight="529.0" prefWidth="790.0">
+                     <children>
+                        <AnchorPane layoutX="24.0" layoutY="12.0" prefHeight="506.0" prefWidth="190.0" style="-fx-background-color: grey; -fx-border-color: black;">
+                           <children>
+                              <Label layoutX="18.0" layoutY="23.0" prefHeight="20.0" prefWidth="142.0" text="Create  Driver" textFill="#e8e4e4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtNameCompany3" layoutX="14.0" layoutY="52.0" promptText="First Name" />
+                              <TextField fx:id="txtCountry3" layoutX="14.0" layoutY="84.0" promptText="Last Name" />
+                              <Button fx:id="btnAddCompany3" layoutX="15.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Add" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnDeleteCompany3" layoutX="100.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnFindCompany3" layoutX="15.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Find" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifyCompany3" layoutX="100.0" layoutY="381.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Assign" textFill="#b03b28">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnAllCompanies3" layoutX="18.0" layoutY="457.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" text="ALL" textFill="#28b22c">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txtBudget4" layoutX="14.0" layoutY="115.0" promptText="Salary" />
+                              <ImageView fitHeight="177.0" fitWidth="128.0" layoutX="26.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/driver1.JPG" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <TextArea fx:id="txtOutput3" layoutX="231.0" layoutY="14.0" prefHeight="493.0" prefWidth="542.0" style="-fx-border-color: black;" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Other">
+               <content>
+                  <AnchorPane prefHeight="529.0" prefWidth="790.0">
+                     <children>
+                        <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="61.0" prefWidth="781.0" style="-fx-background-color: grey; -fx-border-color: black;" />
+                        <ImageView fitHeight="447.0" fitWidth="798.0" layoutX="24.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Company.JPG" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

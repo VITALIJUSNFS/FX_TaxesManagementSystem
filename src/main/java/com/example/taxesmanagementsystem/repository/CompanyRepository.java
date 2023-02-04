@@ -2,15 +2,22 @@ package com.example.taxesmanagementsystem.repository;
 
 import com.example.taxesmanagementsystem.entity.Company;
 import com.example.taxesmanagementsystem.utils.HibernateUtil;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.taxesmanagementsystem.utils.DatabaseUtils.dbConnection;
+
 public class CompanyRepository {
+
+
 
     public List<Company> findAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -78,4 +85,68 @@ public class CompanyRepository {
         session.close();
     }
 
+    //JDBC findAllCompanies
+    public static List<Company> constructCompaniesList(ResultSet resultSet) throws SQLException {
+        List<Company> companies = new ArrayList<>();
+        while (resultSet.next()) {
+            Company company = new Company();
+            company.setId(resultSet.getLong("id"));
+            company.setName(resultSet.getString("name"));
+            company.setCountry(resultSet.getString("country"));
+            company.setBudget(resultSet.getInt("budget"));
+            companies.add(company);
+        }
+        return companies;
+    }
+
+    public List<Company> findAllCompanies() {
+        Statement statement = null;
+        List<Company> companies = null;
+        try {
+            statement = dbConnection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM company");
+            companies = constructCompaniesList(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return companies;
+    }
+
+    //Find company by Name
+    public List<Company> findCompanyByName(String name) throws SQLException {
+        Statement statement = null;
+        List<Company> companyListByName = new ArrayList<>();
+        try {
+            statement = dbConnection.createStatement();
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT * FROM company WHERE name = '%s';", name));
+            companyListByName = constructCompaniesList(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return companyListByName;
+    }
+
+    // - delete company by name,
+    public void deleteCompany(String name) {
+        Statement statement;
+        try {
+            dbConnection.createStatement().executeUpdate(String.format("DELETE FROM company WHERE name = '%s';", name));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // - save new company
+    public void saveNewCompany(Integer budget, String country, String name) {
+        String sql = "INSERT INTO company(budget, country, name) VALUES(?,?,?)";
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, budget);
+            preparedStatement.setString(2, country);
+            preparedStatement.setString(3, name);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Visi laukai turi but ivesti");
+            e.printStackTrace();
+        }
+    }
 }

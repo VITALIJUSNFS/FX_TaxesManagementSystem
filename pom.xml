@@ -9,9 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <name>TaxesManagementSystem</name>
 
+    <description>Taxes Management System Project</description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.7.1</junit.version>
+        <hibernate.orm.version>5.4.18.Final</hibernate.orm.version>
+        <!--        <hibernate.orm.version>5.4.23.Final</hibernate.orm.version>-->
     </properties>
 
     <dependencies>
@@ -63,12 +67,42 @@
             <scope>runtime</scope>
             <version>8.0.27</version>
         </dependency>
+
         <!--Needed for hibernate -->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.hibernate</groupId>-->
+        <!--            <artifactId>hibernate-core</artifactId>-->
+        <!--            <version>5.4.23.Final</version>-->
+        <!--        </dependency>-->
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.23.Final</version>
+            <version>${hibernate.orm.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-hikaricp</artifactId>
+            <version>${hibernate.orm.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.5.Final</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>jakarta.persistence</groupId>-->
+<!--            <artifactId>jakarta.persistence-api</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--        </dependency>-->
+
+
+        <!--        Hibernate-->
+
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>

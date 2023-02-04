@@ -1,0 +1,1 @@
+https://github.com/julianjupiter/addressbook-javafx-hibernate-mysql/blob/master/pom.xml
